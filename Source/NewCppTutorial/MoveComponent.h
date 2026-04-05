@@ -7,7 +7,7 @@
 #include "MoveComponent.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(NewCppTutorial), meta=(BlueprintSpawnableComponent) )
 class NEWCPPTUTORIAL_API UMoveComponent : public USceneComponent
 {
 	GENERATED_BODY()
