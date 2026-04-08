@@ -69,6 +69,9 @@ void UMoveComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 			// Fire event
 			OnEndpointReached.Broadcast(CurDistance >= MaxDistance);
 
+			//debug
+			//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Green,"True", CurDistance >= MaxDistance, {3, 3});
+
 			// Clamp distance
 			CurDistance = FMath::Clamp(CurDistance, 0.0f, MaxDistance);
 		}
