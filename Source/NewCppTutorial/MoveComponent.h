@@ -17,7 +17,7 @@ class NEWCPPTUTORIAL_API UMoveComponent : public USceneComponent
 public:	
 	// Sets default values for this component's properties
 	UMoveComponent();
-
+	
 	UFUNCTION(BlueprintCallable)
 	void EnableMovement(bool ShouldMove);
 
