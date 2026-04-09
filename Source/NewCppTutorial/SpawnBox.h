@@ -31,20 +31,21 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool SpawnActor();
 
-	// Will schedule an actor spawn
-	void ScheduleActorSpawn();
+    // Change if actors are spawned
+    UFUNCTION(BlueprintCallable)
+    void EnableActorSpawning(bool Enable);
 
 private:
 	UFUNCTION()
 	void SpawnActorScheduled();
 
+    // Will schedule an actor spawn
+    void ScheduleActorSpawn();
+
 public:
     // Actor class to spawn
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TSubclassOf<AActor> ActorClassToBeSpawned;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    bool ShouldSpawn = true;
 
     // Average time between spawns (without random)
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -58,6 +59,10 @@ private:
     // Box in which we will spawn the actors
     UPROPERTY(EditDefaultsOnly)
     UBoxComponent* SpawnBox;
+
+    // Indicates that the actor should spawn actors
+    UPROPERTY(EditAnywhere)
+    bool ShouldSpawn = true;
 
     // Helper for timing
     FTimerHandle SpawnTimerHandle;

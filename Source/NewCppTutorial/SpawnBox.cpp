@@ -51,6 +51,22 @@ bool ASpawnBox::SpawnActor()
 	return SpawnedActor;
 }
 
+void ASpawnBox::EnableActorSpawning(bool Enable)
+{
+	// Update internal state
+	ShouldSpawn = Enable;
+
+	// Check witch timer action should be done
+	if (Enable)
+	{
+		ScheduleActorSpawn();
+	}
+	else
+	{
+		GetWorld()->GetTimerManager().ClearTimer(SpawnTimerHandle);
+	}
+}
+
 void ASpawnBox::ScheduleActorSpawn()
 {
 	// 1. Compute time offset to spawn
