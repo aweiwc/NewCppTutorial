@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "Engine/StaticMesh.h"
+#include "Camera/CameraComponent.h"
 #include "XPPawn.generated.h"
 
 UCLASS()
@@ -26,4 +28,20 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	UPROPERTY(EditAnywhere)
+	float MoveSpeed = 1.0f;
+
+	UPROPERTY(EditAnywhere)
+	float RotationSpeed = 1.0f;
+
+	UPROPERTY(EditDefaultsOnly)
+	UStaticMeshComponent* PlayerMesh;
+
+	UPROPERTY(EditDefaultsOnly)
+	UCameraComponent* PlayerCamera;
+
+	void MoveFB(float value);
+	void MoveLR(float Value);
+	void Rotate(float Value);
 };

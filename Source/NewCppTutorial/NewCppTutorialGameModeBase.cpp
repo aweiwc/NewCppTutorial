@@ -11,7 +11,7 @@ void ANewCppTutorialGameModeBase::InitGameState()
     if (DefaultPawnClass == ADefaultPawn::StaticClass())
     {
         // Update to custom implementation
-        DefaultPawnClass = AXPPawn::StaticClass();
+        DefaultPawnClass = CustomXPPawnClass;
     }
 }
 
