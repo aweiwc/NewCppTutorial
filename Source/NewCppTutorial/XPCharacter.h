@@ -3,19 +3,23 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "GameFramework/Character.h"
+
 #include "Engine/StaticMesh.h"
 #include "Camera/CameraComponent.h"
-#include "XPPawn.generated.h"
+
+#include "Components/CapsuleComponent.h"
+
+#include "XPCharacter.generated.h"
 
 UCLASS()
-class NEWCPPTUTORIAL_API AXPPawn : public APawn
+class NEWCPPTUTORIAL_API AXPCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this pawn's properties
-	AXPPawn();
+	// Sets default values for this character's properties
+	AXPCharacter();
 
 protected:
 	// Called when the game starts or when spawned
@@ -46,3 +50,4 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	UCameraComponent* PlayerCamera;
 };
+
